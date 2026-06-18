@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Sri Lanka Voyage — Sheikh Abdulaziz Ahmed & Family | OV Traveller Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0E0C0A;
+    --cream: #FDFBF7;
+    --warm: #F7F3EC;
+    --rule: #E2DBD0;
+    --gold: #B8955A;
+    --gold-light: #CFA96E;
+    --gold-dark: #9A7740;
+    --mid: #6B6560;
+    --light: #9A9490;
+    --white: #ffffff;
+    --font-sans: 'DM Sans', sans-serif;
+    --font-serif: 'Cormorant Garamond', serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ── HERO ───────────────────────────────────────────── */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 640px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('images/Hero Image.jpg') center 40% / cover no-repeat;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(14,12,10,0.45) 0%, rgba(14,12,10,0.25) 40%, rgba(14,12,10,0.82) 100%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 24px;
+    max-width: 860px;
+  }
+  .hero-seal { display: block; margin: 0 auto 20px; }
+  .hero-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 18px;
+  }
+  .hero-client {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.60);
+    margin-bottom: 12px;
+  }
+  .hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(46px, 7vw, 84px);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--white);
+    letter-spacing: -0.5px;
+    margin-bottom: 22px;
+  }
+  .hero-title em { font-style: italic; color: var(--gold-light); }
+  .hero-subtitle {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.70);
+  }
+  .hero-scroll {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.55);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .hero-scroll span { display: block; width: 1px; height: 48px; background: rgba(255,255,255,0.35); margin: 0 auto; animation: scrollline 2s ease-in-out infinite; }
+  @keyframes scrollline { 0%,100%{opacity:0.3;transform:scaleY(0.5);transform-origin:top;} 50%{opacity:1;transform:scaleY(1);} }
+
+  /* ── NAV ───────────────────────────────────────────── */
+  .sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .sticky-nav::-webkit-scrollbar { display: none; }
+  .nav-inner { display: flex; align-items: center; gap: 0; white-space: nowrap; }
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px 16px;
+    color: rgba(255,255,255,0.50);
+    text-decoration: none;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: color 0.3s;
+    border-bottom: 2px solid transparent;
+  }
+  .nav-item .nav-date { font-size: 15px; font-family: var(--font-serif); font-weight: 400; line-height: 1; margin-bottom: 4px; color: rgba(255,255,255,0.65); }
+  .nav-item:hover { color: var(--gold-light); border-bottom-color: var(--gold); }
+  .nav-item:hover .nav-date { color: var(--gold-light); }
+
+  /* ── INTRO ─────────────────────────────────────────── */
+  .intro-section { background: var(--white); padding: 90px 24px 72px; }
+  .container { max-width: 900px; margin: 0 auto; }
+  .container-wide { max-width: 1120px; margin: 0 auto; }
+  .section-label { font-size: 9px; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 18px; }
+  .intro-text { font-family: var(--font-serif); font-size: clamp(20px, 2.5vw, 27px); font-weight: 300; line-height: 1.68; color: var(--ink); }
+  .intro-divider { display: flex; align-items: center; gap: 16px; margin: 44px 0; }
+  .intro-divider::before, .intro-divider::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+  .intro-divider span { font-size: 16px; color: var(--gold); }
+
+  /* ── OVERVIEW TABLE ────────────────────────────────── */
+  .overview-section { background: var(--warm); padding: 72px 24px; }
+  .section-title { font-family: var(--font-serif); font-size: clamp(28px, 4vw, 44px); font-weight: 400; color: var(--ink); margin-bottom: 8px; }
+  .section-title em { font-style: italic; color: var(--gold); }
+  .section-sub { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--light); margin-bottom: 44px; }
+  .itinerary-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .itinerary-table th { background: var(--ink); color: rgba(255,255,255,0.80); font-size: 9px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; padding: 14px 18px; text-align: left; }
+  .itinerary-table td { padding: 15px 18px; border-bottom: 1px solid rgba(0,0,0,0.06); vertical-align: top; color: var(--mid); }
+  .itinerary-table tr:nth-child(even) td { background: rgba(255,255,255,0.55); }
+  .itinerary-table tr:last-child td { border-bottom: none; }
+  .td-date { font-family: var(--font-serif); font-size: 18px; font-weight: 500; color: var(--ink); white-space: nowrap; }
+  .td-location { font-weight: 600; font-size: 12px; letter-spacing: 0.5px; color: var(--mid); }
+  .td-hotel { font-weight: 500; color: var(--ink); }
+  .transfer-badge { display: inline-block; padding: 2px 7px; background: var(--gold); color: var(--white); font-size: 9px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; border-radius: 2px; margin-left: 6px; vertical-align: middle; }
+
+  /* ── HIGHLIGHTS ────────────────────────────────────── */
+  .highlights-section { background: var(--ink); padding: 72px 24px; color: var(--white); }
+  .highlights-section .section-title { color: var(--white); }
+  .highlights-section .section-label { color: var(--gold); }
+  .highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); margin-top: 44px; }
+  .highlight-item { background: var(--ink); padding: 26px 28px; }
+  .highlight-num { font-family: var(--font-serif); font-size: 32px; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+  .highlight-text { font-size: 13px; font-weight: 400; line-height: 1.65; color: rgba(255,255,255,0.75); }
+
+  /* ── DAY CARDS ─────────────────────────────────────── */
+  .days-section { background: var(--white); }
+  .day-card { display: grid; grid-template-columns: 1fr 1fr; min-height: 560px; }
+  .day-card:nth-child(even) { direction: rtl; }
+  .day-card:nth-child(even) > * { direction: ltr; }
+  .day-image { background: var(--mid) center/cover no-repeat; min-height: 440px; }
+  .day-content { background: var(--white); padding: 64px 54px; display: flex; flex-direction: column; justify-content: center; }
+  .day-number { font-family: var(--font-serif); font-size: 120px; font-weight: 300; line-height: 0.8; color: var(--warm); margin-bottom: 8px; letter-spacing: -4px; }
+  .day-label { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 6px; }
+  .day-title { font-family: var(--font-serif); font-size: clamp(22px, 3vw, 33px); font-weight: 400; color: var(--ink); margin-bottom: 18px; line-height: 1.2; }
+  .day-divider { width: 40px; height: 1px; background: var(--gold); margin-bottom: 22px; }
+  .day-body { font-size: 13.5px; line-height: 1.85; color: var(--mid); }
+  .day-body p { margin-bottom: 14px; }
+  .day-body p:last-child { margin-bottom: 0; }
+  .day-body strong { color: var(--ink); font-weight: 600; }
+  .travel-info { background: var(--warm); border-left: 3px solid var(--gold); padding: 12px 16px; margin: 14px 0; font-size: 12px; color: var(--mid); line-height: 1.6; }
+  .hotel-block { margin-top: 28px; padding: 18px 22px; background: var(--ink); color: var(--white); }
+  .hotel-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 5px; }
+  .hotel-name { font-family: var(--font-serif); font-size: 19px; font-weight: 400; }
+  .hotel-detail { font-size: 11px; color: rgba(255,255,255,0.60); margin-top: 3px; letter-spacing: 0.5px; }
+  .experience-list { margin: 14px 0 0; padding: 0; list-style: none; }
+  .experience-list li { font-size: 12.5px; color: var(--mid); padding: 5px 0; border-bottom: 1px solid var(--rule); display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
+  .experience-list li:last-child { border-bottom: none; }
+  .experience-list li::before { content: '–'; color: var(--gold); flex-shrink: 0; margin-top: 1px; }
+
+  /* ── NOTES ─────────────────────────────────────────── */
+  .notes-section { background: var(--warm); padding: 72px 24px; }
+  .notes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 44px; }
+  .note-card { padding: 30px; background: var(--white); border-top: 3px solid var(--ink); }
+  .note-card-label { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 10px; }
+  .note-card-title { font-family: var(--font-serif); font-size: 19px; font-weight: 400; color: var(--ink); margin-bottom: 12px; }
+  .note-card-text { font-size: 13px; line-height: 1.75; color: var(--mid); }
+
+  /* ── CLOSING ────────────────────────────────────────── */
+  .closing-section {
+    background: var(--ink);
+    padding: 80px 24px;
+    text-align: center;
+  }
+  .closing-discover {
+    font-family: var(--font-serif);
+    font-size: 32px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .closing-sub {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+
+  /* ── FOOTER ─────────────────────────────────────────── */
+  .footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.07); padding: 40px 24px 36px; text-align: center; }
+  .footer-text { font-size: 11px; letter-spacing: 2px; line-height: 2; color: rgba(255,255,255,0.40); }
+  .footer-gold { color: var(--gold); }
+
+  /* ── RESPONSIVE ─────────────────────────────────────── */
+  @media (max-width: 800px) {
+    .day-card { grid-template-columns: 1fr; }
+    .day-card:nth-child(even) { direction: ltr; }
+    .day-image { min-height: 300px; order: -1 !important; }
+    .day-content { padding: 40px 28px; }
+    .day-number { font-size: 80px; }
+    .itinerary-table { display: block; overflow-x: auto; }
+  }
+  @media (max-width: 480px) {
+    .intro-section, .overview-section, .highlights-section, .notes-section { padding: 52px 20px; }
+    .day-content { padding: 30px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <svg class="hero-seal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="88" height="88">
+      <circle cx="80" cy="80" r="74" fill="none" stroke="#B8955A" stroke-width="2"/>
+      <circle cx="80" cy="80" r="68" fill="none" stroke="#B8955A" stroke-width="0.5"/>
+      <ellipse cx="80" cy="78" rx="38" ry="40" fill="none" stroke="#B8955A" stroke-width="4.5"/>
+      <path d="M 62,44 L 80,112 L 98,44" fill="none" stroke="#B8955A" stroke-width="4.5" stroke-linejoin="miter" stroke-linecap="square"/>
+    </svg>
+    <p class="hero-eyebrow">OV Traveller Club &nbsp;&middot;&nbsp; A Private Voyage</p>
+    <p class="hero-client">Arranged for Sheikh Abdulaziz Ahmed &amp; Family</p>
+    <h1 class="hero-title">Sri Lanka</h1>
+    <p class="hero-subtitle">8 Days &nbsp;&middot;&nbsp; Hill Country &nbsp;&middot;&nbsp; Yala &nbsp;&middot;&nbsp; Galle &nbsp;&middot;&nbsp; Colombo</p>
+  </div>
+  <div class="hero-scroll">Scroll<span></span></div>
+</section>
+
+<!-- ══ NAV ═════════════════════════════════════════════ -->
+<nav class="sticky-nav">
+  <div class="nav-inner">
+    <a href="#day1" class="nav-item"><span class="nav-date">01</span>Arrival</a>
+    <a href="#day2" class="nav-item"><span class="nav-date">02</span>Hatton</a>
+    <a href="#day3" class="nav-item"><span class="nav-date">03</span>Hill Country</a>
+    <a href="#day4" class="nav-item"><span class="nav-date">04</span>Yala</a>
+    <a href="#day5" class="nav-item"><span class="nav-date">05</span>Safari</a>
+    <a href="#day6" class="nav-item"><span class="nav-date">06</span>Yala II</a>
+    <a href="#day7" class="nav-item"><span class="nav-date">07</span>Galle</a>
+    <a href="#day8" class="nav-item"><span class="nav-date">08</span>Colombo</a>
+  </div>
+</nav>
+
+<!-- ══ INTRO ════════════════════════════════════════════ -->
+<section class="intro-section">
+  <div class="container">
+    <p class="section-label">The Voyage</p>
+    <p class="intro-text">
+      Eight days across three distinct movements. The hill country first &mdash; cool air, a working tea estate, and the particular quiet that comes with altitude. Then the south, where the landscape opens into dry forest, wild coastline, and wildlife. Then Colombo, briefly, before departure.
+    </p>
+    <div class="intro-divider"><span>&#10022;</span></div>
+    <p class="intro-text">
+      Each stage has been arranged as a single continuous journey; transfers, experiences, and pace designed around Sheikh Abdulaziz Ahmed and his family. Nothing transitions without preparation. The island reveals itself differently at each altitude, and this voyage is built to hold all of them.
+    </p>
+  </div>
+</section>
+
+<!-- ══ OVERVIEW TABLE ═══════════════════════════════════ -->
+<section class="overview-section" id="overview">
+  <div class="container-wide">
+    <p class="section-label">At a Glance</p>
+    <h2 class="section-title">Journey <em>Outline</em></h2>
+    <p class="section-sub">8 Days &nbsp;&middot;&nbsp; Arranged by OV Traveller Club</p>
+    <table class="itinerary-table">
+      <thead>
+        <tr><th>Day</th><th>Movement</th><th>Location</th><th>Property</th><th>Transfer</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="td-date">01</span></td>
+          <td>Arrival, Helicopter transfer to hill country</td>
+          <td><span class="td-location">Colombo &rarr; Hatton</span></td>
+          <td class="td-hotel">Uga Halloowella</td>
+          <td><span class="transfer-badge">Air Transfer</span></td>
+        </tr>
+        <tr>
+          <td><span class="td-date">02</span></td>
+          <td>Tea Experience &middot; Habitat Hike &middot; Afternoon Tea</td>
+          <td><span class="td-location">Hatton</span></td>
+          <td class="td-hotel">Uga Halloowella</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><span class="td-date">03</span></td>
+          <td>Kayaking at Castlereagh &middot; Cycling &middot; Pekoe Trail</td>
+          <td><span class="td-location">Hatton</span></td>
+          <td class="td-hotel">Uga Halloowella</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><span class="td-date">04</span></td>
+          <td>Air transfer to Yala &middot; Check-in Uga Chena Huts</td>
+          <td><span class="td-location">Hatton &rarr; Yala</span></td>
+          <td class="td-hotel">Uga Chena Huts</td>
+          <td><span class="transfer-badge">Air Transfer</span></td>
+        </tr>
+        <tr>
+          <td><span class="td-date">05</span></td>
+          <td>First Safari &middot; Cooking Masterclass &middot; Curd-making</td>
+          <td><span class="td-location">Yala</span></td>
+          <td class="td-hotel">Uga Chena Huts</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><span class="td-date">06</span></td>
+          <td>Second Safari &middot; Bundala &middot; Secret Sundowner</td>
+          <td><span class="td-location">Yala</span></td>
+          <td class="td-hotel">Uga Chena Huts</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><span class="td-date">07</span></td>
+          <td>Final Safari &middot; Galle Fort &middot; Road to Colombo</td>
+          <td><span class="td-location">Yala &rarr; Galle &rarr; Colombo</span></td>
+          <td class="td-hotel">Colombo</td>
+          <td><span class="transfer-badge">Road</span></td>
+        </tr>
+        <tr>
+          <td><span class="td-date">08</span></td>
+          <td>Colombo at leisure &middot; Departure transfer</td>
+          <td><span class="td-location">Colombo</span></td>
+          <td class="td-hotel"></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══ HIGHLIGHTS ═══════════════════════════════════════ -->
+<section class="highlights-section">
+  <div class="container-wide">
+    <p class="section-label">The Experience</p>
+    <h2 class="section-title" style="color:#fff;">What This <em>Voyage Holds</em></h2>
+    <div class="highlights-grid">
+      <div class="highlight-item">
+        <div class="highlight-num">01</div>
+        <div class="highlight-text">Private helicopter from Colombo into the tea hills of Hatton, the island from above, before it reveals itself on the ground.</div>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-num">02</div>
+        <div class="highlight-text">Three nights at Uga Halloowella, a working tea plantation estate, fully staffed, with a dedicated butler and the estate&rsquo;s own programme of included experiences.</div>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-num">03</div>
+        <div class="highlight-text">Dawn kayaking on Castlereagh Reservoir, with morning mist on the water and the tea hills rising behind it.</div>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-num">04</div>
+        <div class="highlight-text">Air transfer to Uga Chena Huts, Yala, one of the island&rsquo;s most considered wildlife properties, set in the dry zone&rsquo;s wild buffer.</div>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-num">05</div>
+        <div class="highlight-text">Three included game drives in Yala, with rangers who identify the park&rsquo;s leopards individually, navigating to them with patience built over years.</div>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-num">06</div>
+        <div class="highlight-text">A cooking class and curd-making session for all ages, designed for the children and remembered by everyone.</div>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-num">07</div>
+        <div class="highlight-text">The Secret Sundowner: the lodge&rsquo;s curated wilderness viewpoint at golden hour, with drinks and canan&eacute;s served as the light changes over the lagoon.</div>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-num">08</div>
+        <div class="highlight-text">Galle&rsquo;s colonial fort on the way north: Portuguese ramparts, Dutch-era streets, and the Indian Ocean on three sides.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DAY CARDS ════════════════════════════════════════ -->
+<div class="days-section">
+
+<!-- Day 1 -->
+<section class="day-card" id="day1">
+  <div class="day-image" style="background-image:url('images/Day 1.png'); background-position:center center;"></div>
+  <div class="day-content">
+    <div class="day-number">01</div>
+    <div class="day-label">Day 01 &middot; Arrival</div>
+    <h2 class="day-title">Colombo: Helicopter to Hatton</h2>
+    <div class="day-divider"></div>
+    <div class="day-body">
+      <p>Sheikh Abdulaziz Ahmed and family arrive in Colombo. The helicopter transfer begins at the private terminal; no waiting, no ordinary arrival sequence. The island unfolds from above: coastline first, then lowland, then the first green folds of the hill country rising ahead.</p>
+      <div class="travel-info">Transfer &nbsp;&middot;&nbsp; Colombo to Hatton &nbsp;&middot;&nbsp; Private Helicopter</div>
+      <p>Uga Halloowella receives the family on arrival. The estate sits within a working tea plantation above Hatton, check-in prepared in advance, the afternoon at the estate&rsquo;s own pace. The highlands here have a particular quality of quiet that the rest of the voyage will not repeat.</p>
+    </div>
+    <div class="hotel-block">
+      <div class="hotel-label">Property</div>
+      <div class="hotel-name">Uga Halloowella</div>
+      <div class="hotel-detail">Hatton &nbsp;&middot;&nbsp; Hill Country &nbsp;&middot;&nbsp; Private Residency</div>
+    </div>
+  </div>
+</section>
+
+<!-- Day 2 -->
+<section class="day-card" id="day2">
+  <div class="day-image" style="background-image:url('images/Day 2.png'); background-position:center center;"></div>
+  <div class="day-content">
+    <div class="day-number">02</div>
+    <div class="day-label">Day 02 &middot; The Hill Country</div>
+    <h2 class="day-title">Tea, the Estate &amp; the Naturalist&rsquo;s Walk</h2>
+    <div class="day-divider"></div>
+    <div class="day-body">
+      <p>The morning begins at 09:15 with the estate&rsquo;s Tea Experience: a guided walk through the working plantation where pickers are sorting the morning&rsquo;s harvest, a visit to the weighing station, and a 30-minute factory tour from fresh leaf to finished cup. The session closes with a tasting of freshly pressed Ceylon teas. Included in the stay.</p>
+      <p>The afternoon: the Habitat Hike departs at 15:00. Two and a half hours through the estate&rsquo;s trails and tea fields, past the Hanuman Kovil and a viewpoint across Adam&rsquo;s Peak. The route passes trap cameras placed by the naturalist in wildlife corridors. The evening presentation of their footage (palm civet, barking deer, leopard) is worth keeping free.</p>
+      <p>At 16:30, the estate serves its afternoon tea: Ceylon tea brewed to order alongside mini hoppers, kokis, and traditional highland sweets, on the patio or by the fire, depending on the afternoon&rsquo;s weather. Included in the stay.</p>
+    </div>
+    <div class="hotel-block">
+      <div class="hotel-label">Property</div>
+      <div class="hotel-name">Uga Halloowella</div>
+      <div class="hotel-detail">Hatton &nbsp;&middot;&nbsp; Hill Country</div>
+    </div>
+  </div>
+</section>
+
+<!-- Day 3 -->
+<section class="day-card" id="day3">
+  <div class="day-image" style="background-image:url('images/Day 3.png'); background-position:center center;"></div>
+  <div class="day-content">
+    <div class="day-number">03</div>
+    <div class="day-label">Day 03 &middot; Hill Country Continued</div>
+    <h2 class="day-title">Castlereagh at Dawn &amp; the Tea Hills</h2>
+    <div class="day-divider"></div>
+    <div class="day-body">
+      <p>An earlier start for those who wish it: kayaking on Castlereagh Reservoir departs at 06:00, while the mist is still on the water. The reservoir sits below the estate; the transfer is a short ride down. The morning at this hour has a particular stillness.</p>
+      <p>A quieter day is equally arranged. The estate&rsquo;s cycling routes through the tea hills depart at 07:00 or 16:00, with mountain bikes and a tuk-tuk transfer to the starting point. Those who prefer to remain on the grounds may do so without arrangement.</p>
+      <p>The Pekoe Trail&rsquo;s Stage 7 section, Kotagala to Norwood, is an easy walk through colonial-era tea estates, past the historic Chrysler&rsquo;s Farm Tea Factory (est. 1870) and Singamalai Lake. For families, this is a full morning at a considered pace.</p>
+      <p>The afternoon tea service at 16:30 closes the day as it did the last.</p>
+    </div>
+    <div class="hotel-block">
+      <div class="hotel-label">Property</div>
+      <div class="hotel-name">Uga Halloowella</div>
+      <div class="hotel-detail">Hatton &nbsp;&middot;&nbsp; Hill Country</div>
+    </div>
+  </div>
+</section>
+
+<!-- Day 4 -->
+<section class="day-card" id="day4">
+  <div class="day-image" style="background-image:url('images/Day 4.JPG'); background-position:center center;"></div>
+  <div class="day-content">
+    <div class="day-number">04</div>
+    <div class="day-label">Day 04 &middot; Transfer to the Wild South</div>
+    <h2 class="day-title">Air Transfer to Yala, Uga Chena Huts</h2>
+    <div class="day-divider"></div>
+    <div class="day-body">
+      <p>Breakfast at the estate. The air transfer south to Yala follows; a different Sri Lanka from what the past three days have offered. The landscape shifts on descent: green and elevated gives way to flat, dry, and wide.</p>
+      <div class="travel-info">Transfer &nbsp;&middot;&nbsp; Hatton to Yala &nbsp;&middot;&nbsp; Private Air Transfer</div>
+      <p>Uga Chena Huts sits in Yala&rsquo;s wildlife-rich buffer zone, where the dry zone forest meets a wild and largely unattended stretch of the southern coast. Check-in is prepared.</p>
+      <p>Three safaris are arranged across the stay. The family selects their preferred timing each day: morning departures at 06:00 or evening departures at 15:30.</p>
+    </div>
+    <div class="hotel-block">
+      <div class="hotel-label">Property</div>
+      <div class="hotel-name">Uga Chena Huts</div>
+      <div class="hotel-detail">Yala &nbsp;&middot;&nbsp; Wild South &nbsp;&middot;&nbsp; Butler Service</div>
+    </div>
+  </div>
+</section>
+
+<!-- Day 5 -->
+<section class="day-card" id="day5">
+  <div class="day-image" style="background-image:url('images/Day 5.jpg'); background-position:center center;"></div>
+  <div class="day-content">
+    <div class="day-number">05</div>
+    <div class="day-label">Day 05 &middot; First Safari</div>
+    <h2 class="day-title">Yala: The Leopard Kingdom</h2>
+    <div class="day-divider"></div>
+    <div class="day-body">
+      <p>The first safari enters Yala at first light. The lodge&rsquo;s rangers identify the park&rsquo;s leopards individually, each animal&rsquo;s territory known, each morning&rsquo;s drive navigated toward them with the patience that comes from years inside the park. Yala holds one of the highest leopard densities recorded anywhere in the world.</p>
+      <p>The park also holds elephant, sloth bear, spotted deer, buffalo, mugger crocodile, and more than 215 recorded bird species, including the rare black-necked stork.</p>
+      <p>For the children, the late morning at the lodge. The family&rsquo;s programme for the day:</p>
+      <ul class="experience-list">
+        <li>Sri Lankan Cooking Masterclass at 11:00: rice and two aromatic curries in clay pots, with the cultural significance of each recipe explained as the session unfolds</li>
+        <li>Curd-making immediately following: buffalo milk heated over an open hearth, set in a clay pot, served with kithul treacle</li>
+        <li>Both sessions designed for all ages, running together across two hours</li>
+      </ul>
+    </div>
+    <div class="hotel-block">
+      <div class="hotel-label">Property</div>
+      <div class="hotel-name">Uga Chena Huts</div>
+      <div class="hotel-detail">Yala &nbsp;&middot;&nbsp; 3 Safaris Included</div>
+    </div>
+  </div>
+</section>
+
+<!-- Day 6 -->
+<section class="day-card" id="day6">
+  <div class="day-image" style="background-image:url('images/Day 6.png'); background-position:center center;"></div>
+  <div class="day-content">
+    <div class="day-number">06</div>
+    <div class="day-label">Day 06 &middot; Second Day in Yala</div>
+    <h2 class="day-title">Bundala, the Beach &amp; the Secret Sundowner</h2>
+    <div class="day-divider"></div>
+    <div class="day-body">
+      <p>A second safari at the family&rsquo;s preferred time. For those who wish to see the south through a different lens, the Bundala National Park safari departs at 05:00. A Ramsar-protected coastal wetland 45 minutes from the lodge, sheltering 197 documented bird species. During peak season, more than 100 can be sighted in a single session.</p>
+      <p>The coastal walk from the lodge departs at 16:00, a guided walk along the wild beach through dunes and rocky outcrops, past turtle nesting sites, and the overnight tracks of animals that pass through in the dark. The rangers lead; the coastline here is Yala&rsquo;s least-visited edge.</p>
+      <p>At 16:30, the Secret Sundowner. The lodge guides the family to one of its curated wilderness viewpoints, chosen based on where wildlife has been moving. Drinks and canan&eacute;s served as the light changes over the lagoon. Two hours at the edge of the park, before the dark settles over it.</p>
+    </div>
+    <div class="hotel-block">
+      <div class="hotel-label">Property</div>
+      <div class="hotel-name">Uga Chena Huts</div>
+      <div class="hotel-detail">Yala &nbsp;&middot;&nbsp; Wild South</div>
+    </div>
+  </div>
+</section>
+
+<!-- Day 7 -->
+<section class="day-card" id="day7">
+  <div class="day-image" style="background-image:url('images/Day 7.png'); background-position:center center;"></div>
+  <div class="day-content">
+    <div class="day-number">07</div>
+    <div class="day-label">Day 07 &middot; The Road North</div>
+    <h2 class="day-title">Final Safari, Galle Fort, Colombo</h2>
+    <div class="day-divider"></div>
+    <div class="day-body">
+      <p>The third and final safari at the family&rsquo;s preferred time. After check-out, the road north toward Colombo stops in Galle.</p>
+      <div class="travel-info">Transfer &nbsp;&middot;&nbsp; Yala to Galle to Colombo &nbsp;&middot;&nbsp; Private Road Transfer</div>
+      <p>Galle&rsquo;s colonial fort is a 90-minute interlude: Portuguese ramparts from the 16th century, Dutch-era streets from the 17th, and the Indian Ocean on three sides. A different Sri Lanka from what the past six days have offered; older, quieter, and built from a different kind of history.</p>
+      <p>The journey continues to Colombo for the final night. Check-in to the city property before evening.</p>
+    </div>
+    <div class="hotel-block">
+      <div class="hotel-label">Property</div>
+      <div class="hotel-name">Colombo</div>
+      <div class="hotel-detail">Final Night &nbsp;&middot;&nbsp; City</div>
+    </div>
+  </div>
+</section>
+
+<!-- Day 8 -->
+<section class="day-card" id="day8">
+  <div class="day-image" style="background-image:url('images/Day 8.jpg'); background-position:center center;"></div>
+  <div class="day-content">
+    <div class="day-number">08</div>
+    <div class="day-label">Day 08 &middot; Departure</div>
+    <h2 class="day-title">Colombo, Departure</h2>
+    <div class="day-divider"></div>
+    <div class="day-body">
+      <p>The final day in Colombo is arranged around the family&rsquo;s schedule and confirmed flight time. The city offers shopping, a relaxed coastal rhythm, and options suited to children and adults equally.</p>
+      <p>Colombo&rsquo;s covered markets and boutique districts are an easy morning. The pace is the family&rsquo;s own. Departure transfer to the international terminal at the confirmed time, the journey arranged to its last detail.</p>
+    </div>
+  </div>
+</section>
+
+</div><!-- end days-section -->
+
+<!-- ══ JOURNEY NOTES ════════════════════════════════════ -->
+<section class="notes-section">
+  <div class="container-wide">
+    <p class="section-label">Journey Notes</p>
+    <h2 class="section-title">Arranged <em>Details</em></h2>
+    <p class="section-sub">Everything the family needs to know before arrival</p>
+    <div class="notes-grid">
+
+      <div class="note-card">
+        <div class="note-card-label">Transfers</div>
+        <div class="note-card-title">Private at Every Stage</div>
+        <div class="note-card-text">All transfers arranged privately; no shared transport at any point. Helicopter from Colombo to Hatton. Light aircraft from Hatton to Yala. Private road from Yala through Galle to Colombo. Every connection prepared in advance.</div>
+      </div>
+
+      <div class="note-card">
+        <div class="note-card-label">Safaris</div>
+        <div class="note-card-title">Three Game Drives, Included</div>
+        <div class="note-card-text">Three safaris included at Uga Chena Huts. Morning departures at 06:00 (until 09:00) or evening departures at 15:30 (until 18:30). The family selects their preferred timing each day. Private exclusive game drives available on request.</div>
+      </div>
+
+      <div class="note-card">
+        <div class="note-card-label">Included at Uga Halloowella</div>
+        <div class="note-card-title">Tea Experience &amp; Afternoon Tea</div>
+        <div class="note-card-text">The Shared Tea Experience (09:15 daily) and Sri Lankan Afternoon Tea (16:30 daily) are included in the estate stay. The Habitat Hike, kayaking, and cycling experiences are available at quoted rates per person.</div>
+      </div>
+
+      <div class="note-card">
+        <div class="note-card-label">For the Children</div>
+        <div class="note-card-title">Designed for All Ages</div>
+        <div class="note-card-text">Cooking Masterclass and curd-making (Yala, Day 5). Guided coastal bush walk. Bundala National Park birdwatching. The Habitat Hike at Halloowella. All activities designed for mixed ages. Lodge-specific timing confirmed with your Travel Advisor before arrival.</div>
+      </div>
+
+      <div class="note-card">
+        <div class="note-card-label">Butler &amp; Housekeeping</div>
+        <div class="note-card-title">Briefed Before You Arrive</div>
+        <div class="note-card-text">Dedicated butler arrangements at both properties. Meal preferences, dietary requirements, and any arrangements for the children will be briefed by your Travel Advisor to each property directly. Nothing is left to arrival.</div>
+      </div>
+
+      <div class="note-card">
+        <div class="note-card-label">Your Travel Advisor</div>
+        <div class="note-card-title">One Point of Contact</div>
+        <div class="note-card-text">One Travel Advisor manages this voyage from the first arrangement to the final transfer. The same person who arranged the Maldives voyage. Nothing passes through a different hand.<br><br>[Advisor Name] &nbsp;&middot;&nbsp; [Direct Line]</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ CLOSING ══════════════════════════════════════════ -->
+<section class="closing-section">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="56" height="56" style="display:block;margin:0 auto 28px;opacity:0.7;">
+    <circle cx="80" cy="80" r="74" fill="none" stroke="#B8955A" stroke-width="2"/>
+    <circle cx="80" cy="80" r="68" fill="none" stroke="#B8955A" stroke-width="0.5"/>
+    <ellipse cx="80" cy="78" rx="38" ry="40" fill="none" stroke="#B8955A" stroke-width="4.5"/>
+    <path d="M 62,44 L 80,112 L 98,44" fill="none" stroke="#B8955A" stroke-width="4.5" stroke-linejoin="miter" stroke-linecap="square"/>
+  </svg>
+  <div class="closing-discover">Discover Yourself.</div>
+  <div class="closing-sub">OV Traveller Club &nbsp;&middot;&nbsp; A Private Voyage &nbsp;&middot;&nbsp; Sri Lanka 2026</div>
+</section>
+
+<!-- ══ FOOTER ════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-text">
+    <span class="footer-gold">OV Traveller Club</span> &nbsp;&middot;&nbsp; Arranged for Sheikh Abdulaziz Ahmed &amp; Family &nbsp;&middot;&nbsp; Sri Lanka 2026<br>
+    This document has been prepared exclusively for the named party. It is not for redistribution.<br>
+    &copy; 2026 OV Holidays. Registered in the Maldives.
+  </div>
+</footer>
+
+</body>
+</html>
